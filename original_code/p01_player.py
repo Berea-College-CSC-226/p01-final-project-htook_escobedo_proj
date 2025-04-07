@@ -18,11 +18,6 @@
 import pygame
 
 
-
-
-
-
-
 class Player(pygame.sprite.Sprite):
     def __init__(self, screen_size):
         """
@@ -32,7 +27,7 @@ class Player(pygame.sprite.Sprite):
         super().__init__()
         self.screen_size = screen_size
         print("Game Starting")
-        self.surf = pygame.image.load('images/tuna.png').convert_alpha()
+        self.surf = pygame.image.load('images/PLayer.png').convert_alpha()
         self.surf.set_colorkey((255, 255, 255), pygame.RLEACCEL)
         self.rect = self.surf.get_rect()
         self.rect.move_ip(self.screen_size[0]//2, self.screen_size[1]//2)
