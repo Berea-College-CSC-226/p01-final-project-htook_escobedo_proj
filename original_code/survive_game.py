@@ -1,4 +1,5 @@
 import pygame
+from p01_player import Entity
 import sys
 
 class Game:
@@ -15,6 +16,9 @@ This is the setup for the screen
         self.font = pygame.font.SysFont(None, 40)
         self.clock = pygame.time.Clock()
         self.start_time = pygame.time.get_ticks()
+        self.screen.fill('#9CBEBA')
+        self.guy = Entity(self.size)
+        self.mob = Entity(self.size)
 
     def run(self):
 
@@ -32,6 +36,15 @@ This is the setup for the screen
             # self.screen.fill((60, 20, 30))
             timer_text = self.font.render(f"Score: {seconds:.2f}s", True, (255, 255, 255))
             self.screen.blit(timer_text, (0, 0))
+
+            if pygame.sprite.spritecollide(self.mob, [self.guy], False):
+                pass
+            else:
+                self.guy.p1movement(pygame.key.get_pressed())
+                self.screen.fill('#9CBEBA')
+                self.screen.blit(self.guy.surf, self.guy.rect)
+                self.screen.blit(self.mob.surf, self.mob.rect)
+
             pygame.display.flip()
             self.clock.tick(60)
 
@@ -62,4 +75,6 @@ This is the setup for the screen
 def main():
     game = Game()
     game.run()
-main()
+
+if __name__ == '__main__':
+    main()

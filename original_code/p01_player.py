@@ -1,19 +1,4 @@
-######################################################################
-# Author: Dr. Scott Heggen
-#
-# Assignment: T11: The Legend of Tuna: Breath of Catnip
-#
-# Purpose: Learn about classes, inheritance, and Pygame
-######################################################################
-# Acknowledgements:
-#
-# Inspired by Zelda, rebuilt into Python by: https://github.com/clear-code-projects/Zelda
-# Art
-# Borrowed some ideas from: https://realpython.com/pygame-a-primer/
 
-# licensed under a Creative Commons
-# Attribution-Noncommercial-Share Alike 3.0 United States License.
-####################################################################################
 
 import pygame
 
@@ -29,14 +14,11 @@ class Entity(pygame.sprite.Sprite):
         super().__init__()
         self.screen_size = screen_size
         print("Game Starting")
-        self.surf = pygame.image.load('images/PLayer.png').convert_alpha()
+        self.surf = pygame.image.load('Player.PNG').convert_alpha()
         self.surf.set_colorkey((255, 255, 255), pygame.RLEACCEL)
         self.rect = self.surf.get_rect()
         self.rect.move_ip(self.screen_size[0]//2, self.screen_size[1]//2)
-    def player(self):
-        """This will differinciate the player on the screen which is controllable to
-        the user compared to the npc."""
-        pass
+
     def p1movement(self, keys):
         """
         This def makes the user able to control the player sprite with the keyboard keys.
@@ -64,3 +46,11 @@ class Entity(pygame.sprite.Sprite):
         """This is the movement for the npc which makes it randomly use different movements
         to reach the player. """
         pass
+
+#
+# class Player(Entity):
+#     """This will differinciate the player on the screen which is controllable to
+#     the user compared to the npc."""
+#
+#
+# pass
