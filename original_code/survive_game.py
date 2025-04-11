@@ -19,6 +19,7 @@ This is the setup for the screen
         self.screen.fill('#9CBEBA')
         self.guy = Entity.player(4)
         self.badguy = Entity.mob(self.screen_size)
+    # Add GUI in here that then calls run after quiting.
 
     def run(self):
 
