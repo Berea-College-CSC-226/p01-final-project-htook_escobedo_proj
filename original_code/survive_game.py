@@ -17,8 +17,8 @@ This is the setup for the screen
         self.clock = pygame.time.Clock()
         self.start_time = pygame.time.get_ticks()
         self.screen.fill('#9CBEBA')
-        self.guy = Entity(self.size)
-        self.mob = Entity(self.size)
+        self.guy = Entity.player(4)
+        self.badguy = Entity.mob(self.screen_size)
 
     def run(self):
 
