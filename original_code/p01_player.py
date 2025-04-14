@@ -1,4 +1,3 @@
-from xml.dom.minidom import Entity
 
 import pygame
 
@@ -37,16 +36,16 @@ class Entity(pygame.sprite.Sprite):
         elif keys[pygame.K_LEFT]:
             self.rect.move_ip(-3, 0)
 
-    class mob(Entity):
+class Mob(Entity):
         """This will differinciate the NPC on the screen which moves randombly
         and is actively tring to reach the player, from the actual player. """
-        def __init__(Entity, self):
-            super().__init__(self.size)
-            Entity.position = [100, 100]
-    class player(Entity):
-        def __init__(Entity,self):
-            super().__init__(self.size)
-            Entity.position = [0, 0]
+    def __init__(Entity, screen_size):
+        super().__init__(screen_size)
+        Entity.position = [100, 100]
+class Player(Entity):
+    def __init__(Entity, screen_size):
+        super().__init__(screen_size)
+        Entity.position = [0, 0]
 
 
     def npcmovement(self,):

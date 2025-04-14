@@ -1,5 +1,6 @@
+
+from p01_player import *
 import pygame
-from p01_player import Entity
 import sys
 
 class Game:
@@ -17,8 +18,8 @@ This is the setup for the screen
         self.clock = pygame.time.Clock()
         self.start_time = pygame.time.get_ticks()
         self.screen.fill('#9CBEBA')
-        self.guy = Entity.player(4)
-        self.badguy = Entity.mob(self.screen_size)
+        self.guy = Entity.Player(screen_size)
+        self.badguy = Entity.Mob(screen_size)
     # Add GUI in here that then calls run after quiting.
 
     def run(self):
@@ -38,13 +39,13 @@ This is the setup for the screen
             timer_text = self.font.render(f"Score: {seconds:.2f}s", True, (255, 255, 255))
             self.screen.blit(timer_text, (0, 0))
 
-            if pygame.sprite.spritecollide(self.mob, [self.guy], False):
+            if pygame.sprite.spritecollide(self.Mob, [self.guy], False):
                 pass
             else:
                 self.guy.p1movement(pygame.key.get_pressed())
                 self.screen.fill('#9CBEBA')
                 self.screen.blit(self.guy.surf, self.guy.rect)
-                self.screen.blit(self.mob.surf, self.mob.rect)
+                self.screen.blit(self.Mob.surf, self.Mob.rect)
 
             pygame.display.flip()
             self.clock.tick(60)
