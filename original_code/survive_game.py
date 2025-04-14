@@ -24,11 +24,9 @@ This is the setup for the screen
         self.root = tk.Tk()  # Create the root window where all widgets go
         self.root.minsize(width=250, height=100)  # Sets the window's minimum size
         self.root.maxsize(width=250, height=100)
-
         self.guy = Player(self.size)
         self.badguy = Mob(self.size)
-        self.guy = Entity.Player(screen_size)
-        self.badguy = Entity.Mob(screen_size)
+
     # Add GUI in here that then calls run after quiting.
 
     def run(self):

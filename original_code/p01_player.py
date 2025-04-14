@@ -11,8 +11,8 @@ class Entity(pygame.sprite.Sprite):
         :param
         screen_size: Screen size, for keeping character on the screen
         """
+        super.__init__()
         self.screen_size = screen_size
-        super().__init__()
         print("Game Starting")
         self.surf = pygame.image.load('Player.PNG').convert_alpha()
         self.surf.set_colorkey((255, 255, 255), pygame.RLEACCEL)
@@ -40,11 +40,11 @@ class Entity(pygame.sprite.Sprite):
 class Mob(Entity):
     """This will differinciate the NPC on the screen which moves randombly
     and is actively tring to reach the player, from the actual player. """
-    def __init__(self):
+    def __init__(self, screen_size):
         super().__init__(self.screen_size)
         Entity.position = [100, 100]
 class Player(Entity):
-    def __init__(self):
+    def __init__(self, screen_size):
         super().__init__(self.screen_size)
         Entity.position = [0, 0]
 
