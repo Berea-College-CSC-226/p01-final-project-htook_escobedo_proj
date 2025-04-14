@@ -1,6 +1,7 @@
 import pygame
-from p01_player import Entity
+from p01_player import Entity, Player, Mob
 import sys
+import tkinter as tk
 
 class Game:
     """
@@ -9,6 +10,7 @@ This is the setup for the screen
 
     """
     def __init__(self):
+        myGUI = Game
         self.size = 800, 600
         self.running = True
         pygame.init()
@@ -17,8 +19,12 @@ This is the setup for the screen
         self.clock = pygame.time.Clock()
         self.start_time = pygame.time.get_ticks()
         self.screen.fill('#9CBEBA')
-        self.guy = Entity.player(4)
-        self.badguy = Entity.mob(self.screen_size)
+        self.root = tk.Tk()  # Create the root window where all widgets go
+        self.root.minsize(width=250, height=100)  # Sets the window's minimum size
+        self.root.maxsize(width=250, height=100)
+
+        self.guy = Player(self.size)
+        self.badguy = Mob(self.size)
     # Add GUI in here that then calls run after quiting.
 
     def run(self):
