@@ -46,7 +46,7 @@ This is the setup for the screen
             timer_text = self.font.render(f"Score: {seconds:.2f}s", True, (255, 255, 255))
             self.screen.blit(timer_text, (0, 0))
 
-            if pygame.sprite.spritecollide(self.Mob, [self.guy], False):
+            if pygame.sprite.spritecollide(self.badguy, [self.guy], False):
                 pass
             else:
                 self.guy.p1movement(pygame.key.get_pressed())
