@@ -2,7 +2,7 @@
 
 import pygame
 
-"hello"
+"hello2"
 class Entity(pygame.sprite.Sprite):
 
     """This class represents the entity on the screen"""
