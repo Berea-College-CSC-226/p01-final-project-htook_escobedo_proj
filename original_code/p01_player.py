@@ -14,9 +14,6 @@ class Entity(pygame.sprite.Sprite):
         super().__init__()
         self.screen_size = screen_size
         print("Game Starting")
-        self.surf = pygame.image.load('Player.PNG').convert_alpha()
-        self.surf.set_colorkey((255, 255, 255), pygame.RLEACCEL)
-        self.rect = self.surf.get_rect()
 
 
     def p1movement(self, keys):
@@ -42,13 +39,20 @@ class Mob(Entity):
     and is actively tring to reach the player, from the actual player. """
     def __init__(self, screen_size):
         super().__init__(screen_size)
-        self.position = [100, 100]
-        self.rect.move_ip(self.screen_size[0] // 2, self.screen_size[1] // 2)
+        self.surf = pygame.image.load('Player.PNG').convert_alpha()
+        self.surf.set_colorkey((255, 255, 255), pygame.RLEACCEL)
+        self.rect = self.surf.get_rect()
+        self.rect.move_ip(self.screen_size[0]*3//4, self.screen_size[1]*3//4)
+        # Entity.position = [100, 100]
 class Player(Entity):
     def __init__(self, screen_size):
         super().__init__(screen_size)
-        self.position = [0, 0]
-        self.rect.move_ip(self.screen_size[0] // 2, self.screen_size[1] // 2)
+        self.surf = pygame.image.load('Player.PNG').convert_alpha()
+        self.surf.set_colorkey((255, 255, 255), pygame.RLEACCEL)
+        self.rect = self.surf.get_rect()
+        self.rect.move_ip(self.screen_size[0]//4, self.screen_size[1]//4)
+        # Entity.position = [0, 0]
+
 
 
     def npcmovement(self,):
