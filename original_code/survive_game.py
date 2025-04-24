@@ -39,6 +39,8 @@ This is the setup for the screen
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     self.running = False
+            Mob.npc_directions(self)
+            Mob.npcmovement(self)
             self.screen.fill('#9CBEBA')
             seconds = (pygame.time.get_ticks() - self.start_time) / 1000
             # self.screen.fill((60, 20, 30))
@@ -53,7 +55,9 @@ This is the setup for the screen
                 self.screen.fill('#9CBEBA')
                 self.screen.blit(self.guy.surf, self.guy.rect)
                 self.screen.blit(self.badguy.surf, self.badguy.rect)
-                print("else statement")
+
+
+
 
             pygame.display.flip()
             self.clock.tick(60)
