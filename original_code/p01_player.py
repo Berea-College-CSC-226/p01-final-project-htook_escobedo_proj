@@ -46,9 +46,9 @@ class Mob(Entity):
         self.surf.set_colorkey((255, 255, 255), pygame.RLEACCEL)
         self.rect = self.surf.get_rect()
         self.rect.move_ip(self.screen_size[0]*3//4, self.screen_size[1]*3//4)
-        move_distance = 10
-        directions = ["north", "east", "west", "south"]
-        self.path = random.choices(directions)
+        self.move_distance = 5
+        self.directions = ["north", "east", "west", "south"]
+        self.path = random.choices(self.directions)
         # Entity.position = [100, 100]
     def npc_directions(self):
 

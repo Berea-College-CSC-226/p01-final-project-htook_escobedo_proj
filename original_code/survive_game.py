@@ -39,22 +39,24 @@ This is the setup for the screen
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     self.running = False
-            Mob.npc_directions(self)
-            Mob.npcmovement(self)
+            self.badguy.npc_directions()
+            self.badguy.npcmovement()
             self.screen.fill('#9CBEBA')
             seconds = (pygame.time.get_ticks() - self.start_time) / 1000
             # self.screen.fill((60, 20, 30))
             timer_text = self.font.render(f"Score: {seconds:.2f}s", True, (255, 255, 255))
             self.screen.blit(timer_text, (0, 0))
 
-            if pygame.sprite.spritecollide(self.badguy, [self.guy], False):
-                #game over sign when they collide
-                print("hi mom")
-            else:
+            if not pygame.sprite.spritecollide(self.badguy, [self.guy], False):
                 self.guy.p1movement(pygame.key.get_pressed())
                 self.screen.fill('#9CBEBA')
                 self.screen.blit(self.guy.surf, self.guy.rect)
                 self.screen.blit(self.badguy.surf, self.badguy.rect)
+
+            else:
+                self.running = False
+                #game over in here
+
 
 
 
