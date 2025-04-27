@@ -11,8 +11,7 @@ This is the setup for the screen
 
     """
     def __init__(self):
-        myGUI = Game
-        self.size = 800, 600
+        self.size = 1250, 680
         self.running = True
         pygame.init()
         self.screen = pygame.display.set_mode(self.size)
@@ -20,13 +19,47 @@ This is the setup for the screen
         self.clock = pygame.time.Clock()
         self.start_time = pygame.time.get_ticks()
         self.screen.fill('#9CBEBA')
-        self.root = tk.Tk()  # Create the root window where all widgets go
-        self.root.minsize(width=250, height=100)  # Sets the window's minimum size
-        self.root.maxsize(width=250, height=100)
         self.guy = Player(self.size)
         self.badguy = Mob(self.size)
 
     # Add GUI in here that then calls run after quiting.
+    def game_over(self):
+        """This creates game over screen after the pygame event ends because they aren't able to work together to
+        a seperate function is required to show this"""
+        game_over_window = tk.Toplevel()
+        game_over_window.title("Game Over")
+
+
+        window_width = 300
+        window_height = 200
+        # Get the screen dimensions
+        screen_width = game_over_window.winfo_screenwidth()
+        screen_height = game_over_window.winfo_screenheight()
+
+        # Calculate the position to center the window
+        x = (screen_width - window_width) // 2
+        y = (screen_height - window_height) // 2
+
+        # Set the geometry of the window
+        game_over_window.geometry(f"{window_width}x{window_height}+{x}+{y}")
+
+        label = tk.Label(game_over_window, text="Gameover", font =("Comic Sans MS", 16)) #sets the text, font and size
+        label.pack(pady=20)
+        restart_button = tk.Button(game_over_window, text="Restart", command=lambda: [game_over_window.destroy(), self.restart()])
+        restart_button.pack(pady=5)
+
+        exit_button = tk.Button(game_over_window, text= "Exit", command=lambda: [game_over_window.destroy(), pygame.quit(), sys.exit()]) #Creates an exit button
+        exit_button.pack(pady=10)
+
+        game_over_window.mainloop()
+
+    def restart(self):
+        """Reset the game state and restart."""
+        self.start_time = pygame.time.get_ticks()  # Reset the timer
+        self.guy = Player(self.size)  # Re-create the player
+        self.badguy = Mob(self.size)  # Re-create the NPC
+        self.running = True
+        self.run()  # Restart the game loop
 
     def run(self):
 
@@ -55,8 +88,7 @@ This is the setup for the screen
 
             else:
                 self.running = False
-                #game over in here
-
+                self.game_over()
 
 
 
