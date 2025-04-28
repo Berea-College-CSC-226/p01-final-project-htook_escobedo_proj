@@ -44,7 +44,7 @@ This is the setup for the screen
             "X X      X     XX X    X X   X X",  # row 12
             "X X XX X XXX X    XXX XX X XXX X",  # row 13
             "X X    X     XX X          X   X",  # row 14
-            "X XXX XXXX XXXX XXX XXXXXX X X X",  # row 15
+            "X XXX XXXX XXX  XXX XXXXXX X X X",  # row 15
             "X                              X",  # row 16
             "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",  # row 17
         ]
@@ -93,8 +93,8 @@ This is the setup for the screen
 
         button_style = {
             "font": ("Comic Sans MS", 16),
-            "bg": "#444",  # Button background
-            "fg": "#FFF",  # Text color
+            "bg": "lightblue",  # Button background
+            "fg": "black",  # Text color
             "activebackground": "#666",  # Background when hovered
             "activeforeground": "#FFD700",  # Text color when hovered
             "width": 12,
@@ -110,9 +110,12 @@ This is the setup for the screen
         )
         restart_button.pack(pady=5)
 
-        exit_button = tk.Button(game_over_window, text= "Exit",
-                                command=lambda: [game_over_window.destroy(), pygame.quit(), sys.exit()],
-                                bg="red", fg="black") #Creates an exit button
+        exit_button = tk.Button(
+            game_over_window,
+            text= "Exit",
+            command=lambda: [game_over_window.destroy(), pygame.quit(), sys.exit()],
+            **button_style
+        ) #Creates an exit button
         exit_button.pack(pady=10)
 
         game_over_window.mainloop()
