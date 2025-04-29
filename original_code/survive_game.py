@@ -59,7 +59,7 @@ This is the setup for the screen
 
 
     # Add GUI in here that then calls run after quiting.
-    def game_over(self):
+    def game_over(self, elapsed_time):
         """This creates game over screen after the pygame event ends because they aren't able to work together to
         a seperate function is required to show this"""
         game_over_window = tk.Toplevel()
@@ -83,7 +83,7 @@ This is the setup for the screen
 
         label = tk.Label(
             game_over_window,
-            text="You Win!!!",           #The text displayed
+            text=f"You Win!!!\nTime: {elapsed_time:.2f} seconds",           #The text displayed
             font =("Comic Sans MS", 16), #The font and size
             bg = "#1e1e2f",              #The background color
             fg = "white",                #The text color
@@ -156,7 +156,8 @@ This is the setup for the screen
 
             else:
                 self.running = False
-                self.game_over()
+                elapsed_time = (pygame.time.get_ticks() - self.start_time) / 1000
+                self.game_over(elapsed_time)
 
 
 
