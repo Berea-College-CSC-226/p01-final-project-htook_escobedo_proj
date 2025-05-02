@@ -176,14 +176,6 @@ This is the setup for the screen
 
 
 
-
-    def scoreboard(self):
-        """This will use the time funtion to get the score, everytime time goes up
-        so does the score. """
-
-        pass
-
-
 def main():
     game = Game()
     game.run()

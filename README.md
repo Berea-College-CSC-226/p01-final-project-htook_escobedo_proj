@@ -57,7 +57,8 @@ Reflect on what you’ve done so far. How’s it going? Are you feeling behind/a
 What has surprised you so far? Describe your general feelings. Be honest with yourself; this section is for you, not me.
 
 ```
-    **Replace this text with your reflection
+    So far everything is going well but we have run in to a few issues that were quickly solved by either looking at an example code or just
+    asking a TA or teacher where there is a problem in our code. I think we are on our way to getting this project completed on time. 
 ```
 
 ---
@@ -66,32 +67,35 @@ What has surprised you so far? Describe your general feelings. Be honest with yo
 
 Indicate what percentage of the project you have left to complete and how confident you feel. 
 
-❗️**Completion Percentage**: `0 - 100%`
-
-❗️**Confidence**: Describe how confident you feel about completing this project, and why. Then, describe some 
+️**Completion Percentage**: "Either 50-70% depending if we feel like adding more but as of now I would say 70%"
+  **Confidence**: Describe how confident you feel about completing this project, and why. Then, describe some 
   strategies you can employ to increase the likelihood that you'll be successful in completing this project 
   before the deadline.
 
 ```
-    **Replace this text with your reflection
+    " We bot feel somewhat confident about its completion, at the moment we are having issues with spawing the NPC and depending on how that goes we'll
+    either solve it ourselves, but if time starts to run out we'll ask for assitance."
 ```
 
 ---
 
 ## Milestone 4: Final Code, Presentation, Demo
 
-### ❗User Instructions
+### User Instructions
 
 In a paragraph, explain how to use your program. Assume the user is starting just after they hit the "Run" button 
 in PyCharm. 
+"When Run is executed the user will be taken to a screen with a maze and their character they will then use the arrrow keys to guide their 
+player model to catch the mob npc and win the game. After they are displayed their time and then they will choose whether they would like to play again or to 
+end the game."
 
-### ❗Errors and Constraints
+### Errors and Constraints
 
 Every program has bugs or features that had to be scrapped for time. These bugs should be tracked in the issue queue. 
 You should already have a few items in here from the prior weeks. Create a new issue for any undocumented errors and 
 deficiencies that remain in your code. Bugs found that aren't acknowledged in the queue will be penalized.
 
-### ❗Peer Evaluation
+### Peer Evaluation
 
 It is important that all members of your team contribute equitably. The peer evaluation is your chance to either 
 a) celebrate the great work you all did together as an effective team, or b) indicate to the instructor if a member of
@@ -109,7 +113,12 @@ Each partner should write three to four well-written paragraphs address the foll
 - How well did you work with your partner? What made it go well? What made it challenging?
 
 ```
-    Partner 1: **Replace this text with your reflection
+    Ku : We selected this program because we thought it was the easiest of simplest game to program and run. While our final design doesn't look like 
+    what we planned out to be, some of the code was simpler but all the features we were going to add didn't make the cut because of time constraints. Personally for 
+    me the hardest part about this all was both getting the time to do this while also balancing other classes that I was falling behind in, in the actual code
+    the hardest part we ran into was getting both the NPC and the player to spawn. They were spawning but colliding which ended the game instantously.
+    But knowing and experiencing this project, the next time we do something similar I guess I could manage my time better and communicate with my partner
+    more effectively. Other than that we completed our code quickly and got the issues completed once I was actually able to free up my schedule and communicate effectively. 
 ```
 
 ```
